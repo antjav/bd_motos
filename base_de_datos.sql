@@ -3,11 +3,11 @@
 /*==============================================================*/
 create table EMPRESA (
   empresa_id           INT4            not null,
-  empresa_nombre       VARCHAR(20)     null,
+  empresa_nombre       VARCHAR(30)     null,
   empresa_direccion    VARCHAR(30)     null,
-  empresa_ciudad       VARCHAR(20)     null,
-  empresa_correo       VARCHAR(20)     null,
-  empresa_telefono     VARCHAR(20)     null,
+  empresa_ciudad       VARCHAR(30)     null,
+  empresa_correo       VARCHAR(30)     null,
+  empresa_telefono     VARCHAR(30)     null,
 
   constraint PK_EMPRESA primary key (empresa_id)
 );
@@ -17,9 +17,9 @@ create table EMPRESA (
 /*==============================================================*/
 create table REVISION (
   revision_id                 INT4            not null,
-  revision_estadoequipo       VARCHAR(20)     null,
+  revision_estadoequipo       VARCHAR(30)     null,
   revision_fecha              DATE            null,
-  revision_disponibilidad     VARCHAR(20)     null,
+  revision_disponibilidad     VARCHAR(30)     null,
 
   constraint PK_REVISION primary key (revision_id)
 );
@@ -32,7 +32,7 @@ create table CLIENTE (
   cliente_cedula              VARCHAR(20)     null,
   cliente_nombre              VARCHAR(20)     null,
   cliente_apellido            VARCHAR(20)     null,
-  cliente_correo              VARCHAR(20)     null,
+  cliente_correo              VARCHAR(30)     null,
   cliente_fechanacimiento     DATE            null,
   cliente_telefono            VARCHAR(20)     null,
 
@@ -48,7 +48,7 @@ create table REVISIONMOTO (
   revisionmoto_fecha      DATE            null,
   revisionmoto_costo      NUMERIC(6,2)    null,
   revisionmoto_pagado     NUMERIC(6,2)    null,
-  revisionmoto_estado     VARCHAR(20)     null,
+  revisionmoto_estado     VARCHAR(50)     null,
 
   constraint PK_REVISIONMOTO primary key (revisionmoto_id)
 );
@@ -60,7 +60,7 @@ create table REPORTEREVISION (
   reporterevision_id         INT4            not null,
   revisionmoto_id            INT4            not null,
   reporterevision_fecha      DATE            null,
-  reporterevision_danios     VARCHAR(20)     null,
+  reporterevision_danios     VARCHAR(50)     null,
 
   constraint PK_REPORTEREVISION primary key (reporterevision_id)
 );
@@ -105,7 +105,7 @@ create table EMPLEADO (
   empleado_nombre        VARCHAR(20)     null,
   empleado_apellido      VARCHAR(20)     null,
   empleado_correo        VARCHAR(20)     null,
-  empleado_direccion     VARCHAR(30)     null,
+  empleado_direccion     VARCHAR(50)     null,
   empleado_celular       VARCHAR(20)     null,
   empleado_tipo          VARCHAR(20)     null,
 
@@ -136,7 +136,7 @@ create table ENTREGA (
 create table ENTREGAESTADO (
   entregaestado_id          INT4            not null,
   entrega_id                INT4            not null,
-  entregaestado_estado      VARCHAR(20)     null,
+  entregaestado_estado      VARCHAR(50)     null,
 
   constraint PK_ENTREGAESTADO primary key (entregaestado_id)
 );
@@ -147,7 +147,7 @@ create table ENTREGAESTADO (
 create table ENTREGAREPORTE (
   entregareporte_id            INT4            not null,
   entregaestado_id             INT4            not null,
-  entregareporte_incidente     VARCHAR(20)     null,
+  entregareporte_incidente     VARCHAR(50)     null,
   entregareporte_pagado        NUMERIC(6,2)    null,
   entregareporte_fecha         DATE            null,
 
@@ -186,9 +186,9 @@ create table SOLICITUD (
 create table LUGAR (
   lugar_id               INT4            not null,
   sector_id              INT4            not null,
-  lugar_nombre           VARCHAR(20)     null,
-  lugar_concurrencia     VARCHAR(20)     null,
-  lugar_entrega          VARCHAR(20)     null,
+  lugar_nombre           VARCHAR(30)     null,
+  lugar_concurrencia     VARCHAR(30)     null,
+  lugar_entrega          VARCHAR(30)     null,
 
   constraint PK_LUGAR primary key (lugar_id)
 );
